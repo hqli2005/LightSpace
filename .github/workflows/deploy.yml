@@ -1,4 +1,4 @@
-name: Deploy Next.js Blog to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -16,22 +16,23 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: '23'
 
       - name: Install dependencies
         run: |
-          cd apps/next-blog
-          npm install
+          npm install -g pnpm
+          cd apps/next-space
+          pnpm install
 
       - name: Build Next.js app
         run: |
-          cd apps/next-blog
-          npm run build
+          cd apps/next-space
+          pnpm build
 
       - name: Deploy to GitHub Pages
         run: |
-          cd apps/next-blog
-          npm install -g gh-pages
-          npx gh-pages -d out
+          cd apps/next-space
+          pnpm install -g gh-pages
+          pnpx gh-pages -d out
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

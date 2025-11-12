@@ -1,3 +1,2 @@
 apps:
-  - apps/next-blog
-  - apps/nest-api
+  - apps/*
