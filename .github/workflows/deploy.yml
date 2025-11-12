@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install -g pnpm
           # Install at repository root so pnpm workspace links packages and binaries
-          pnpm install
+          pnpm install --filter next-space
 
       - name: Build Next.js app
         run: |
