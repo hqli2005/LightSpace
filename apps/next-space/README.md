@@ -1,38 +1,36 @@
-# Next.js Blog Project
-
-This is a Next.js application that serves as a blog within a monorepo setup. 
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-To get started with the Next.js blog, follow these steps:
+First, run the development server:
 
-1. **Install Dependencies**: 
-   Run the following command to install the necessary dependencies:
-   ```
-   npm install
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-2. **Run the Development Server**: 
-   Start the development server with:
-   ```
-   npm run dev
-   ```
-   Your application will be available at `http://localhost:3000`.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Project Structure
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- `src/app/page.tsx`: The main page component that renders the homepage.
-- `src/components/Layout.tsx`: A layout component that defines the structure of the application.
-- `src/styles/globals.css`: Global styles applied throughout the application.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Deployment
+## Learn More
 
-This application is configured to be deployed to GitHub Pages. Ensure that you have set up the necessary GitHub Actions workflow for deployment.
+To learn more about Next.js, take a look at the following resources:
 
-## Contributing
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Feel free to contribute to this project by submitting issues or pull requests. 
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## License
+## Deploy on Vercel
 
-This project is licensed under the MIT License.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
