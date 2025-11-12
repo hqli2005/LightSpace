@@ -16,8 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: '23'
 
       - name: Install dependencies (pnpm workspace)
         run: |
