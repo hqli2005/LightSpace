@@ -11,29 +11,27 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '23'
 
-      - name: Install dependencies (pnpm workspace)
+      - name: Install pnpm and dependencies
         run: |
           npm install -g pnpm
-          # Install at repository root so pnpm workspace links packages and binaries
           pnpm install
 
       - name: Build Next.js app
         run: |
           cd apps/next-space
-          pnpm install
           pnpm build
+          pnpm export
 
       - name: Deploy to GitHub Pages
         run: |
           cd apps/next-space
-          pnpm install -g gh-pages
-          pnpx gh-pages -d out
+          npx gh-pages -d out
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
