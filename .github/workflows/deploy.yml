@@ -20,14 +20,14 @@ jobs:
 
       - name: Install pnpm and all workspace dependencies
         run: |
-          npm install -g pnpm
-          pnpm install --recursive   # 一次性安装根目录 + 所有子包依赖
+          npx pnpm install 
 
       - name: Build Next.js app
         run: |
           cd apps/next-space
-          pnpm build
-          pnpm export  # 导出静态文件到 out 文件夹
+          npx pnpm install 
+          npx pnpm build
+          npx pnpm export  # 导出静态文件到 out 文件夹
 
       - name: Deploy to GitHub Pages
         run: |

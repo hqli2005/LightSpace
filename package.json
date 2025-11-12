@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-blog",
+  "name": "lightspace-monorepo",
   "private": true,
   "workspaces": [
     "apps/*"
