@@ -1,33 +1,22 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '23'
-
-      - name: Build Next.js app
-        run: |
+          node-version: 23
+      - run: |
+          npm i -g pnpm
+          pnpm i -r
           cd apps/next-space
-          npx pnpm install 
-          npx pnpm build
-          npx pnpm export  # 导出静态文件到 out 文件夹
-
-      - name: Deploy to GitHub Pages
-        run: |
-          cd apps/next-space
+          pnpm build && pnpm export
           npx gh-pages -d out
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
