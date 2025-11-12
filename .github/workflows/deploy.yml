@@ -18,10 +18,6 @@ jobs:
         with:
           node-version: '23'
 
-      - name: Install pnpm and all workspace dependencies
-        run: |
-          npx pnpm install 
-
       - name: Build Next.js app
         run: |
           cd apps/next-space
